@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+    <h1>Crear miembro</h1>
+
+    <br>
+
+    <a href="/members">Index</a>
+
+    <br>
+<br>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_table }}
+        <br>
+        <input type="submit" value="Crear">
+    </form>
+
+</body>
+</html>

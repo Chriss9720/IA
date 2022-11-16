@@ -1,17 +1,53 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    </head>
 <body>
 
 <h1>Lista</h1>
 
 <br>
 
-{% for item in lista %}
+    <a href="add">Crear nuevo</a>
 
-    <h3> {{item}} </h3>
+    <br>
+    <br>
+    <br>
 
-{% endfor %}
+    <div class="w3-responsive">
 
+        <table class="w3-table-all w3-card-4">
+            <thead>
+                <tr class="w3-black">
+                    <th>Borrar</th>
+                    <th>Editar</th>
+                    <th>Nombre</th>
+                    <th>Apellidos</th>
+                </tr>
+            </thead>
+            {% for item in lista %}
+
+                <tr class="w3-hover-gray">
+                    <td style="color:red">
+                        <a href='deleted/{{item.id}}'>Eliminar</a>
+                    </td>
+                    <td style="color:blue">
+                        <a href='update/{{item.id}}'>Editar</a>
+                    </td>
+                    <td>
+                        {{item.firstname}}
+                    </td>
+                    <td>
+                        {{item.lastname}}
+                    </td>
+                </tr>
+
+            {% endfor %}
+
+        </table>
+
+    </div>
 
 </body>
 </html>
